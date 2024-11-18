@@ -1,8 +1,8 @@
 <?php
 
-namespace Wefabric\ExcelImport\Jobs;
+namespace Wefabric\FilamentExcelImport\Jobs;
 
-use Wefabric\ExcelImport\Actions\DoImport;
+use Wefabric\FilamentExcelImport\Actions\DoImport;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -18,7 +18,7 @@ class ExcelImport implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(public \Wefabric\ExcelImport\Models\ExcelImport $excelImport)
+    public function __construct(public \Wefabric\FilamentExcelImport\Models\ExcelImport $excelImport)
     {
         $this->onQueue('excel_import');
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wefabric\ExcelImport\Providers;
+namespace Wefabric\FilamentExcelImport\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Wefabric\ExcelImport\Filament\Tables\Actions;
+namespace Wefabric\FilamentExcelImport\Filament\Tables\Actions;
 
 
-use Wefabric\ExcelImport\Actions\Import;
+use Wefabric\FilamentExcelImport\Actions\Import;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Actions\Action;
 use Illuminate\Support\Collection;

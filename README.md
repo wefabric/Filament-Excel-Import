@@ -26,5 +26,5 @@ Om de package toe te voegen aan een Laravel-project, volg je de onderstaande sta
    
 3. **Publiceer de configuratie- en migratiebestanden::**
     ```bash
-    php artisan vendor:publish --provider="Wefabric\ExcelImport\ExcelImportServiceProvider"
+    php artisan vendor:publish --provider="Wefabric\FilamentExcelImport\ExcelImportServiceProvider"
     ```

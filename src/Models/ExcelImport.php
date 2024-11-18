@@ -1,6 +1,6 @@
 <?php
 
-namespace Wefabric\ExcelImport\Models;
+namespace Wefabric\FilamentExcelImport\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

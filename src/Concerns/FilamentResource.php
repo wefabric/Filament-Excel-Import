@@ -1,6 +1,6 @@
 <?php
 
-namespace Wefabric\ExcelImport\Concerns;
+namespace Wefabric\FilamentExcelImport\Concerns;
 
 
 interface FilamentResource

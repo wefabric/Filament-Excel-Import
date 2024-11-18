@@ -1,12 +1,12 @@
 <?php
 
-namespace Wefabric\ExcelImport\Filament;
+namespace Wefabric\FilamentExcelImport\Filament;
 
-use Wefabric\ExcelImport\Filament\Pages;
-use Wefabric\ExcelImport\Filament\RelationManagers;
-use Wefabric\ExcelImport\Actions\DoImport;
-use Wefabric\ExcelImport\Actions\GetFilamentResourceFromImportClass;
-use Wefabric\ExcelImport\Models\ExcelImport;
+use Wefabric\FilamentExcelImport\Filament\Pages;
+use Wefabric\FilamentExcelImport\Filament\RelationManagers;
+use Wefabric\FilamentExcelImport\Actions\DoImport;
+use Wefabric\FilamentExcelImport\Actions\GetFilamentResourceFromImportClass;
+use Wefabric\FilamentExcelImport\Models\ExcelImport;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
@@ -111,7 +111,7 @@ class ExcelImportResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Wefabric\ExcelImport\Filament\Pages\ListExcelImports::route('/'),
+            'index' => \Wefabric\FilamentExcelImport\Filament\Pages\ListExcelImports::route('/'),
             //'create' => \Domains\Excel\Filament\Pages\CreateExcelImport::route('/create'),
             //'edit' => \Domains\Excel\Filament\Pages\EditExcelImport::route('/{record}/edit'),
         ];

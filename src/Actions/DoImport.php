@@ -1,10 +1,10 @@
 <?php
 
-namespace Wefabric\ExcelImport\Actions;
+namespace Wefabric\FilamentExcelImport\Actions;
 
 use Carbon\Carbon;
-use Wefabric\ExcelImport\Concerns\CountImports;
-use Wefabric\ExcelImport\Models\ExcelImport;
+use Wefabric\FilamentExcelImport\Concerns\CountImports;
+use Wefabric\FilamentExcelImport\Models\ExcelImport;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\ValidationException;
 use Maatwebsite\Excel\Concerns\SkipsOnFailure;

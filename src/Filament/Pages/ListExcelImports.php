@@ -1,8 +1,8 @@
 <?php
 
-namespace Wefabric\ExcelImport\Filament\Pages;
+namespace Wefabric\FilamentExcelImport\Filament\Pages;
 
-use Wefabric\ExcelImport\Filament\ExcelImportResource;
+use Wefabric\FilamentExcelImport\Filament\ExcelImportResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Wefabric\ExcelImport\Actions;
+namespace Wefabric\FilamentExcelImport\Actions;
 
 use DateInterval;
 use DateTimeInterface;
-use Wefabric\ExcelImport\Models\ExcelImport;
+use Wefabric\FilamentExcelImport\Models\ExcelImport;
 
 class Import
 {
@@ -19,16 +19,16 @@ class Import
         $excelImport->save();
 
         if($schedule === false || $schedule === null) {
-            \Wefabric\ExcelImport\Jobs\ExcelImport::dispatchSync($excelImport);
+            \Wefabric\FilamentExcelImport\Jobs\ExcelImport::dispatchSync($excelImport);
             return $excelImport;
         }
 
         if($schedule === true) {
-            \Wefabric\ExcelImport\Jobs\ExcelImport::dispatch($excelImport);
+            \Wefabric\FilamentExcelImport\Jobs\ExcelImport::dispatch($excelImport);
             return $excelImport;
         }
 
-        \Wefabric\ExcelImport\Jobs\ExcelImport::dispatch($excelImport)->delay($schedule);
+        \Wefabric\FilamentExcelImport\Jobs\ExcelImport::dispatch($excelImport)->delay($schedule);
         return $excelImport;
     }
 }

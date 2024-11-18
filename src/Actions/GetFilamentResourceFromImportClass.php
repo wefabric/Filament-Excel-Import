@@ -1,9 +1,9 @@
 <?php
 
-namespace Wefabric\ExcelImport\Actions;
+namespace Wefabric\FilamentExcelImport\Actions;
 
-use Wefabric\ExcelImport\Concerns\FilamentResource;
-use Wefabric\ExcelImport\Models\ExcelImport;
+use Wefabric\FilamentExcelImport\Concerns\FilamentResource;
+use Wefabric\FilamentExcelImport\Models\ExcelImport;
 use Filament\Resources\Resource;
 
 class GetFilamentResourceFromImportClass

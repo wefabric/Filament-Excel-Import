@@ -1,9 +1,9 @@
 <?php
 
-namespace Wefabric\ExcelImport\Policies;
+namespace Wefabric\FilamentExcelImport\Policies;
 
 use App\Models\User;
-use Wefabric\ExcelImport\Models\ExcelImport;
+use Wefabric\FilamentExcelImport\Models\ExcelImport;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ExcelImportPolicy
