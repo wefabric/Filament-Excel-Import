@@ -21,7 +21,7 @@ Om de package toe te voegen aan een Laravel-project, volg je de onderstaande sta
 
     Doe vervolgens 
     ```bash
-    composer require wefabric/excel-import
+    composer require wefabric/filament-excel-import
     ```
    
 3. **Publiceer de configuratie- en migratiebestanden::**
