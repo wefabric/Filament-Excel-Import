@@ -13,7 +13,7 @@ Om de package toe te voegen aan een Laravel-project, volg je de onderstaande sta
    "repositories": [
        {
            "type": "vcs",
-           "url": "https://bitbucket.org/slicklabs/excel-import"
+           "url": "https://github.com/wefabric/filament-excel-import"
        }
    ],
    ```
