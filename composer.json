@@ -1,6 +1,13 @@
 {
     "name": "wefabric/filament-excel-import",
     "description": "Filament Excel Import",
+    "type": "library",
+    "keywords" : [
+        "wefabric",
+        "laravel",
+        "filament-excel-import"
+    ],
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Wefabric\\FilamentExcelImport\\": "src/"
@@ -10,9 +17,13 @@
         {
             "name": "Leo Flapper",
             "email": "leo@wefabric.nl"
+        },{
+            "name": "Erik van der Horst",
+            "email": "erik@wefabric.nl"
         }
     ],
     "require": {
+        "php": "8.*",
         "maatwebsite/excel": "^3.1",
         "pxlrbt/filament-excel": "2.*"
     },
