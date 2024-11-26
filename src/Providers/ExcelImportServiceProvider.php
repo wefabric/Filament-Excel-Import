@@ -21,6 +21,7 @@ class ExcelImportServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/excel.php' => config_path('excel.php'),
+            __DIR__.'/../config/excel-import.php' => config_path('excel-import.php'),
         ], 'excel-import-config');
 
         $this->publishes([

@@ -20,7 +20,18 @@ class ExcelImportResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-cloud-arrow-up';
 
-    protected static ?string $navigationGroup = 'Catalog';
+    protected static ?string $navigationGroup = 'Instellingen';
+
+
+    public static function getNavigationGroup(): ?string
+    {
+        return config('excel-import.filament.navigation_group');
+    }
+
+    public static function getLabel(): ?string
+    {
+        return config('excel-import.filament.label');
+    }
 
     public static function form(Form $form): Form
     {
