@@ -4,12 +4,15 @@ namespace Wefabric\FilamentExcelImport\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Prunable;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Validators\Failure;
+use Illuminate\Database\Eloquent\Builder;
 
 class ExcelImport extends Model
 {
     use HasFactory;
+    use Prunable;
 
     protected $fillable = [
         'path',
@@ -26,6 +29,23 @@ class ExcelImport extends Model
         'errors' => 'array',
         'messages' => 'array',
     ];
+
+    protected static function booted(): void
+    {
+        parent::booted();
+        static::deleted(function (ExcelImport $file) {
+            Storage::disk($file->storage_disk)->delete($file->path);
+        });
+    }
+
+    public function prunable(): ?Builder
+    {
+        $pruneMonths = config('excel-import.prune_months');
+        if ($pruneMonths) {
+            return static::where('created_at', '<=', now()->subMonths($pruneMonths));
+        }
+        return null;
+    }
 
     public function isCompleted(): bool
     {
