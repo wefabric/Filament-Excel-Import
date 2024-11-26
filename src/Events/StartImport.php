@@ -15,13 +15,13 @@ class StartImport
     use Dispatchable, SerializesModels;
 
     public ExcelImport $excelImport;
-    public ?Authenticatable $user;
+    public ?User $user;
     /**
      * Create a new event instance.
      */
-    public function __construct(ExcelImport $excelImport)
+    public function __construct(ExcelImport $excelImport, User $user = null)
     {
-        $this->user = Auth::user();
+        $this->user = $user;
         $this->excelImport = $excelImport;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Wefabric\FilamentExcelImport\Actions;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Wefabric\FilamentExcelImport\Concerns\CountImports;
 use Wefabric\FilamentExcelImport\Events\EndImport;
@@ -15,12 +16,12 @@ use Maatwebsite\Excel\Validators\Failure;
 
 class DoImport
 {
-    public function execute(ExcelImport $excelImport, bool $force = false): ExcelImport
+    public function execute(ExcelImport $excelImport, bool $force = false, User $user = null): ExcelImport
     {
         if (!$force && $excelImport->isImported()) {
             return $excelImport;
         }
-        event(new StartImport($excelImport));
+        event(new StartImport($excelImport, $user));
         $messages = [];
 
 
@@ -60,7 +61,7 @@ class DoImport
             throw $e;
 
         }
-        event(new EndImport($excelImport));
+        event(new EndImport($excelImport, $user));
 
         return $excelImport;
     }

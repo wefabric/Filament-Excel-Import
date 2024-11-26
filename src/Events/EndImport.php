@@ -2,6 +2,7 @@
 
 namespace Wefabric\FilamentExcelImport\Events;
 
+use App\Models\User;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -15,14 +16,14 @@ class EndImport
 
     public ExcelImport $excelImport;
 
-    public ?Authenticatable $user;
+    public ?User $user;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(ExcelImport $excelImport)
+    public function __construct(ExcelImport $excelImport, User $user = null)
     {
-        $this->user = Auth::user();
+        $this->user = $user;
 
         $this->excelImport = $excelImport;
     }
