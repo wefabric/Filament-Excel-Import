@@ -12,6 +12,7 @@ class ImportAction extends Action
 {
 
     protected string $importClass;
+    protected bool $scheduledImport = true;
 
     public function setUp(): void
     {
@@ -23,7 +24,7 @@ class ImportAction extends Action
                 throw new \Exception('Import class not set. Use importClass() method.');
             }
 
-            (new Import())->execute($this->importClass, $data['file'], config('filesystems.default'), true);
+            (new Import())->execute($this->importClass, $data['file'], config('filesystems.default'), $this->scheduledImport);
         })
             ->label('Import')
             ->button()
@@ -39,6 +40,12 @@ class ImportAction extends Action
     public function importClass(string $importClass): self
     {
         $this->importClass = $importClass;
+
+        return $this;
+    }
+    public function scheduledImport(bool $scheduledImport = true): self
+    {
+        $this->scheduledImport = $scheduledImport;
 
         return $this;
     }
